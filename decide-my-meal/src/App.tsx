@@ -1,12 +1,13 @@
 import React from "react";
 import Navbar from "./components/layout/navbar/Navbar";
-function App() {
+import StyledNavbar from "./components/layout/navbar/Navbar.style";
+
+const App: React.FC = () => {
   return (
     <div className="App">
-      <Navbar />
-      <div>hello world</div>
+      <StyledNavbar className="main-nav" />
     </div>
   );
-}
+};
 
 export default App;
