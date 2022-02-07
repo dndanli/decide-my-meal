@@ -1,11 +1,16 @@
 import React from "react";
-import Navbar from "./components/layout/navbar/Navbar";
-import StyledNavbar from "./components/layout/navbar/Navbar.style";
+import Home from "./pages/home/Home";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 const App: React.FC = () => {
   return (
     <div className="App">
-      <StyledNavbar className="main-nav" />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={Home}></Route>
+        </Routes>
+      </BrowserRouter>
+      <Home />
     </div>
   );
 };
