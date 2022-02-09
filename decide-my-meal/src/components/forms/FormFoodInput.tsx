@@ -1,4 +1,4 @@
-import { addFoodInput, removeFoodInput } from "../../functions/FormCreation";
+import { removeFoodInput } from "../../functions/FormCreation";
 
 const FormFoodInput = () => {
   return (
