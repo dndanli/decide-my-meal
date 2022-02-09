@@ -64,7 +64,7 @@ const GlobalStyle = createGlobalStyle`
 
   .food-input{
     height: 1.7rem;
-    width: 175px;
+    width: 235px;
     border-radius: 3px;
     padding: 10px;
     margin-bottom:.5rem;
@@ -72,7 +72,7 @@ const GlobalStyle = createGlobalStyle`
     margin-right: 7px;
   }
  
-  input[type='submit']{
+  input[type='submit'], #more-food{
     margin-top: 1rem;
     height: 3rem;
     width: 310px;
@@ -80,7 +80,7 @@ const GlobalStyle = createGlobalStyle`
     font-size: 1.4rem;
     border-radius: 3px;
   }
-  input[type='button']{
+  #less-food{
     height: 3rem;
     width: 50px;
     padding: 13px;
@@ -88,11 +88,9 @@ const GlobalStyle = createGlobalStyle`
     color: #646464;
     background-color: rgb(255, 254, 252);
   }
+
   #more-food, #less-food{
     font-size: 1.5rem;
-  }
-  #more-food{
-    margin-right: 7px;
   }
 
   .food-input-section{
