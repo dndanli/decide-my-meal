@@ -1,20 +1,19 @@
 import React from "react";
 import StyledNavbar from "../../components/layout/navbar/Navbar.style";
+import MainForm from "../../components/forms/MainForm";
+/**
+ *
+ * if only one food input then display the + and - buttons
+ * if more than 1 then
+ *  then display normal food input
+ *  make last food input display + and - buttons
+ */
 const Home: React.FC = () => {
   return (
     <div>
       <StyledNavbar className="main-nav" />
       <div className="content-wrapper">
-        <div className="instructions">
-          <ul>
-            <li>Instruction 1</li>
-            <li>Instruction 2</li>
-            <li>Instruction 3</li>
-            <li>Instruction 4</li>
-            <li>Instruction 5</li>
-          </ul>
-        </div>
-        <div className="form-section">form will go here</div>
+        <MainForm />
       </div>
     </div>
   );
