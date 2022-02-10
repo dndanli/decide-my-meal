@@ -6,7 +6,7 @@ const StyledNavbar = styled(Navbar)`
   .nav-ul {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
   }
   .nav-ul li {
     list-style-type: none;

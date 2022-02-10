@@ -37,10 +37,18 @@ const GlobalStyle = createGlobalStyle`
   }
   .result-content{
     flex: 1;
-    background-color: #252422;
-    color:rgb(255, 254, 252);
+    color: #252422;
+    background-color:rgb(255, 254, 252);
+    border-left: 1px solid #d4d2d2;
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    align-items: center;
   }
-
+  .options-entered{
+    margin-top: 11rem;
+    list-style-type: none;
+  }
 
   #form-text-h1{
     margin-top: 10rem;
@@ -50,7 +58,7 @@ const GlobalStyle = createGlobalStyle`
     color: #E75A7C;
   }
  
-  input{
+  input, select{
     border:none;
     appearance: none;
     -webkit-appearance: none;
@@ -91,7 +99,8 @@ const GlobalStyle = createGlobalStyle`
     padding: 13px;
     font-size: 1.4rem;
     border-radius: 3px;
-    background-color: #252422;
+    background-color: #d5adc8;
+    background-image: linear-gradient(315deg, #d5adc8 0%, #ff8489 74%);
     color: rgba(255, 254, 252);
   }
 
