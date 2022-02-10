@@ -1,26 +1,22 @@
-import { useState } from "react";
-import FormFoodInput from "./FormFoodInput";
+import React, { useState } from "react";
 
 const MainForm = () => {
-  const [inputArray, updateArrInput] = useState([<FormFoodInput />]);
-
-  const addFoodInput = () => {
-    updateArrInput((oldArr) => [...oldArr, <FormFoodInput />]);
-  };
   return (
-    <div className="form-section">
-      <form className="main-form">
-        <input type="text" className="user-input" placeholder="City" />
-        <input type="text" className="user-input" placeholder="State" />
+    <div className="wrapper">
+      <div className="form-content">
+        <h1 id="form-text-h1">Welcome</h1>
+        <h4 id="form-text-h4">please fill the form bellow</h4>
+        <input type="text" placeholder="City" />
+        <input type="text" placeholder="State" />
         <div className="food-input-wrapper">
-          {inputArray.map((input, i) => {
-            return <div key={i}>{input}</div>;
-          })}
+          <input type="text" placeholder="Food" id="food-input" />
+          <input type="button" id="add-button" value="+" />
         </div>
-        <input type="button" value="+" id="more-food" onClick={addFoodInput} />
         <input type="submit" />
-      </form>
-      ;
+        <form></form>
+      </div>
+
+      <div className="result-content"></div>
     </div>
   );
 };

@@ -9,33 +9,47 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
   } 
-  body{
-    /* padding-left: 10%rem;
-    padding-right: 12rem; */
-    background-color: rgb(255, 254, 252);
-  }
-  .content-wrapper{
-    background-color: #e7e4eb;
-    /* all around */
-    padding: 1rem;
-    display: flex;
-    justify-content: space-evenly;
-    font-size: 1.5rem;
-  }
   
-  .form-section{
-    background-color: lightskyblue;
-    min-height: 90vh;
-    width: 100%;
+  @font-face {
+  font-family: 'Montserrat';
+  src: url('Montserrat.eot');
+  src: url('Montserrat.eot?#iefix') format('embedded-opentype'), 
+    url('Montserrat.woff2') format('woff2'), 
+    url('Montserrat.woff') format('woff'), 
   }
-  .main-form{
-    margin-top: 5rem;
+ 
+  .wrapper{
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    font-family: Montserrat, sans-serif;
   }
 
+  .form-content, .result-content{
+    min-height: 100vh;
+  }
+  .form-content{
+    flex: 1;
+    color: #252422;
+    background-color: rgb(255, 254, 252);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .result-content{
+    flex: 1;
+    background-color: #252422;
+    color:rgb(255, 254, 252);
+  }
+
+
+  #form-text-h1{
+    margin-top: 10rem;
+  }
+
+  #form-text-h4{
+    color: #E75A7C;
+  }
+ 
   input{
     border:none;
     appearance: none;
@@ -51,50 +65,50 @@ const GlobalStyle = createGlobalStyle`
     color:#646464;
     transition: color 0.2s ease;
   }
-
-  
-  .user-input{
-    height: 1.7rem;
-    width: 290px;
+  input[type='text']{
+    margin-top: 1rem;
+    height: 1.2rem;
+    width: 280px;
+    padding: 13px;
+    font-size: 1.2rem;
     border-radius: 3px;
-    padding: 10px;
-    margin-bottom:.5rem;
-    font-size: 1rem;
+    border: 1px solid #b1afaf;
+  }
+  #food-input{
+    margin-top: 1rem;
+    height: 1.2rem;
+    width: 217px;
+    padding: 13px;
+    font-size: 1.2rem;
+    border-radius: 3px;
+    border: 1px solid #b1afaf;
   }
 
-  .food-input{
-    height: 1.7rem;
-    width: 235px;
-    border-radius: 3px;
-    padding: 10px;
-    margin-bottom:.5rem;
-    font-size: 1rem;
-    margin-right: 7px;
-  }
- 
-  input[type='submit'], #more-food{
+  input[type='submit']{
     margin-top: 1rem;
     height: 3rem;
     width: 310px;
     padding: 13px;
     font-size: 1.4rem;
     border-radius: 3px;
+    background-color: #252422;
+    color: rgba(255, 254, 252);
   }
-  #less-food{
+
+  .food-input-wrapper{
+    display: flex;
+  }
+  input[type='button']{
+    margin-top: 1rem;
     height: 3rem;
     width: 50px;
     padding: 13px;
+    font-size: 1.2rem;
     border-radius: 3px;
-    color: #646464;
-    background-color: rgb(255, 254, 252);
-  }
-
-  #more-food, #less-food{
-    font-size: 1.5rem;
-  }
-
-  .food-input-section{
-    display: flex;
+    border: 1px solid #E75A7C;
+    color: #E75A7C;
+    margin-left: 10px;
+    background-color: rgba(255, 254, 252);
   }
 `;
 
