@@ -1,16 +1,23 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import StyledFoodInput from "./FoodInput.style";
 
 const MainForm = () => {
+  const [counter, setCounter] = useState(0);
   const [foodInputArr, updateFoodInputArr] = useState<JSX.Element[]>([]);
 
+  const handleOnRemove = (i: number) => {
+    updateFoodInputArr(foodInputArr.filter((input, index) => index !== i));
+  };
+
   const handleOnAdd = () => {
+    setCounter(counter + 1);
     let foodIputEl = document.getElementById("food-input") as HTMLInputElement;
+
     updateFoodInputArr((oldArr) => [
       ...oldArr,
       <StyledFoodInput
         className="styled-food-input"
-        foodName={foodIputEl.value}
+        foodName={foodIputEl.value.toLowerCase()}
       />,
     ]);
   };
@@ -37,7 +44,11 @@ const MainForm = () => {
       <div className="result-content">
         <ul className="options-entered">
           {foodInputArr.map((input, index) => {
-            return <li key={index}>{input}</li>;
+            return (
+              <li onClick={() => handleOnRemove(index)} key={index}>
+                {input}
+              </li>
+            );
           })}
         </ul>
       </div>

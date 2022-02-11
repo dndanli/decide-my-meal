@@ -119,6 +119,12 @@ const GlobalStyle = createGlobalStyle`
     margin-left: 10px;
     background-color: rgba(255, 254, 252);
   }
+
+  input[type='button']:hover{
+    background-color: pink;
+    transition: ease-in-out 0.5s;
+    color: #ffff;
+  }
 `;
 
 ReactDOM.render(
