@@ -46,8 +46,15 @@ const GlobalStyle = createGlobalStyle`
     align-items: center;
   }
   .options-entered{
-    margin-top: 11rem;
+    margin-top: 12rem;
     list-style-type: none;
+  }
+  #remove-h4{
+    color: #E75A7C;
+  }
+  .options-entered h4{
+    text-align: center;
+    margin-bottom: .5rem;
   }
 
   #form-text-h1{

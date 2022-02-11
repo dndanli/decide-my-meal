@@ -25,6 +25,8 @@ const MainForm = () => {
         />,
       ]);
       updateInputs((oldTextArr) => [...oldTextArr, valueToSearch]);
+    } else {
+      alert(`${valueToSearch} has alrady been added`);
     }
   };
 
@@ -49,6 +51,7 @@ const MainForm = () => {
 
       <div className="result-content">
         <ul className="options-entered">
+          <h4 id="remove-h4">click on food to remove it.</h4>
           {foodInputArr.map((input, index) => {
             return (
               <li onClick={() => handleOnRemove(index)} key={index}>

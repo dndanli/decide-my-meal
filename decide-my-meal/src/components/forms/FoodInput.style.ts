@@ -3,17 +3,28 @@ import FoodInput from "./FoodInput";
 
 const StyledFoodInput = styled(FoodInput)`
   text-align: center;
+  align-items: center;
   border-radius: 7px;
   padding: 1rem;
   margin-bottom: 1rem;
   color: #252422;
   width: 200px;
   border: 1px solid #d4d2d2;
-
-  &:hover {
-    background-color: pink;
-    transition: ease-in-out 0.5s;
+  .remove-mark {
+    font-size: 1.2rem;
     color: #ffff;
+    display: none;
+  }
+  &:hover {
+    background-color: #f7c9d4;
+    transition: ease-in-out 0.8s;
+    color: #ffff;
+    .food-name {
+      display: none;
+    }
+    .remove-mark {
+      display: block;
+    }
   }
 `;
 
