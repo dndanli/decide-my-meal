@@ -132,6 +132,14 @@ const GlobalStyle = createGlobalStyle`
     transition: ease-in-out 0.5s;
     color: #ffff;
   }
+  /* errors */
+  .error-message, .food-error{
+    margin-top:1rem;
+    color: #E75A7C;
+  }
+  #food-error{
+    visibility: hidden;
+  }
 `;
 
 ReactDOM.render(

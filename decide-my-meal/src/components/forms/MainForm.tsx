@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
 import StyledFoodInput from "./FoodInput.style";
 
 const MainForm = () => {
@@ -26,17 +27,43 @@ const MainForm = () => {
       ]);
       updateInputs((oldTextArr) => [...oldTextArr, valueToSearch]);
     } else {
-      alert(`${valueToSearch} has alrady been added`);
+      alert(`${valueToSearch} has already been added`);
     }
   };
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
   return (
     <div className="wrapper">
-      <form className="form-content">
+      <form
+        className="form-content"
+        onSubmit={handleSubmit((data) => {
+          let errorh4 = document.getElementById("food-error") as HTMLElement;
+          if (textInputs.length <= 1) {
+            errorh4.style.visibility = "visible";
+          } else {
+            console.log(data);
+            errorh4.style.visibility = "hidden";
+          }
+        })}
+      >
         <h1 id="form-text-h1">Welcome</h1>
         <h4 id="form-text-h4">please fill the form bellow</h4>
-        <input type="text" placeholder="City" />
-        <input type="text" placeholder="State" />
+        <input
+          {...register("city", { required: "city is required." })}
+          type="text"
+          placeholder="City"
+        />
+        <h4 className="error-message">{errors.city?.message}</h4>
+        <input
+          {...register("state", { required: "state is required." })}
+          type="text"
+          placeholder="State"
+        />
+        <h4 className="error-message">{errors.state?.message}</h4>
         <div className="food-input-wrapper">
           <input type="text" placeholder="Food" id="food-input" />
           <input
@@ -46,6 +73,9 @@ const MainForm = () => {
             onClick={handleOnAdd}
           />
         </div>
+        <h4 className="error-message" id="food-error">
+          you need to choose at least 2 foods.
+        </h4>
         <input type="submit" />
       </form>
 
