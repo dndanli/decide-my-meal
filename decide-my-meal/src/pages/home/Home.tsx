@@ -5,7 +5,7 @@ import MainForm from "../../components/forms/MainForm";
 const Home: React.FC = () => {
   return (
     <div>
-      <StyledNavbar className="main-nav" />
+      {/* <StyledNavbar className="main-nav" /> */}
       <div className="content-wrapper">
         <MainForm />
       </div>

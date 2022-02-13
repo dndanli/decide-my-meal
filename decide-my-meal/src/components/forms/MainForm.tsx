@@ -45,6 +45,9 @@ const MainForm = () => {
           if (textInputs.length <= 1) {
             errorh4.style.visibility = "visible";
           } else {
+            let random =
+              textInputs[Math.floor(Math.random() * textInputs.length)];
+            console.log(random);
             console.log(data);
             errorh4.style.visibility = "hidden";
           }
