@@ -17,6 +17,13 @@ const StyledResult = styled(Result)`
   .choice {
     margin-top: 3rem;
   }
+  .close-btn {
+    font-size: 2rem;
+    position: absolute;
+    right: 1rem;
+    top: 0.5rem;
+    cursor: pointer;
+  }
 `;
 
 export default StyledResult;
