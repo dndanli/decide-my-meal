@@ -19,6 +19,7 @@ const StyledFoodInput = styled(FoodInput)`
     background-color: #f7c9d4;
     transition: ease-in-out 0.8s;
     color: #ffff;
+    cursor: pointer;
     .food-name {
       display: none;
     }

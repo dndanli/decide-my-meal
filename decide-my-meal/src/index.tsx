@@ -100,6 +100,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   input[type='submit']{
+    cursor: pointer;
     margin-top: 1rem;
     height: 3rem;
     width: 310px;
@@ -128,6 +129,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   input[type='button']:hover{
+    cursor: pointer;
     background-color: pink;
     transition: ease-in-out 0.5s;
     color: #ffff;
