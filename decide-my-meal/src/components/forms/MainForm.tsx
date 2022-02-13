@@ -1,11 +1,13 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useForm } from "react-hook-form";
 import StyledFoodInput from "./FoodInput.style";
+import StyledResult from "../layout/result/Result.style";
 
 const MainForm = () => {
   const [counter, setCounter] = useState(0);
   const [foodInputArr, updateFoodInputArr] = useState<JSX.Element[]>([]);
   const [textInputs, updateInputs] = useState<string[]>([]);
+  const foodChosenRef = useRef("");
 
   const handleOnRemove = (i: number) => {
     updateInputs(textInputs.filter((input, index) => index !== i));
@@ -45,10 +47,13 @@ const MainForm = () => {
           if (textInputs.length <= 1) {
             errorh4.style.visibility = "visible";
           } else {
+            console.log(data);
             let random =
               textInputs[Math.floor(Math.random() * textInputs.length)];
-            console.log(random);
-            console.log(data);
+
+            foodChosenRef.current = random;
+            let comp = document.querySelector(".result-display") as HTMLElement;
+            comp.style.display = "block";
             errorh4.style.visibility = "hidden";
           }
         })}
@@ -83,6 +88,11 @@ const MainForm = () => {
       </form>
 
       <div className="result-content">
+        {/* <div ref={foodChosenRef}></div> */}
+        <StyledResult
+          className={"result-display"}
+          foodChosen={foodChosenRef.current}
+        />
         <ul className="options-entered">
           <h4 id="remove-h4">click on food to remove it.</h4>
           {foodInputArr.map((input, index) => {
