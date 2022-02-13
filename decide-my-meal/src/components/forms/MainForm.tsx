@@ -53,7 +53,7 @@ const MainForm = () => {
 
             foodChosenRef.current = random;
             let comp = document.querySelector(".result-display") as HTMLElement;
-            comp.style.display = "block";
+            comp.style.visibility = "visible";
             errorh4.style.visibility = "hidden";
           }
         })}
@@ -88,7 +88,6 @@ const MainForm = () => {
       </form>
 
       <div className="result-content">
-        {/* <div ref={foodChosenRef}></div> */}
         <StyledResult
           className={"result-display"}
           foodChosen={foodChosenRef.current}

@@ -37,8 +37,8 @@ const GlobalStyle = createGlobalStyle`
   }
   .result-content{
     flex: 1;
-    color: #252422;
-    background-color:rgb(255, 254, 252);
+    color:rgb(255, 254, 252);
+    background-color: #2C363F;
     border-left: 1px solid #d4d2d2;
     display: flex;
     flex-direction: column;
@@ -50,7 +50,7 @@ const GlobalStyle = createGlobalStyle`
     list-style-type: none;
   }
   #remove-h4{
-    color: #E75A7C;
+    color: rgb(255, 254, 252);
   }
   .options-entered h4{
     text-align: center;

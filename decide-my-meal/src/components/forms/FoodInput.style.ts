@@ -7,7 +7,7 @@ const StyledFoodInput = styled(FoodInput)`
   border-radius: 7px;
   padding: 1rem;
   margin-bottom: 1rem;
-  color: #252422;
+  color: rgb(255, 254, 252);
   width: 200px;
   border: 1px solid #d4d2d2;
   .remove-mark {
