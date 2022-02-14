@@ -17,6 +17,9 @@ const Result = ({ className, foodChosen }: ResultProp) => {
       <div className="close-btn" onClick={handleOnClose}>
         <AiOutlineCloseCircle />
       </div>
+      <div className="get-restaurants-nearby">
+        <h3>Get restaurants nearby</h3>
+      </div>
     </div>
   );
 };
