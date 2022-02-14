@@ -4,7 +4,9 @@
   "description": "backend for decide-my-meal",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node dist/app.js",
+    "dev": "node src/app.ts",
+    "build": "tsc -p ."
   },
   "repository": {
     "type": "git",
@@ -15,5 +17,13 @@
   "bugs": {
     "url": "https://github.com/dndanli/decide-my-meal/issues"
   },
-  "homepage": "https://github.com/dndanli/decide-my-meal#readme"
+  "homepage": "https://github.com/dndanli/decide-my-meal#readme",
+  "devDependencies": {
+    "@types/node": "^17.0.18",
+    "ts-node": "^10.5.0",
+    "typescript": "^4.5.5"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.0"
+  }
 }
