@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
 import { useForm } from "react-hook-form";
+import postFormData from "../functions/sendFormData";
 import StyledFoodInput from "./FoodInput.style";
 import StyledResult from "../layout/result/Result.style";
 
@@ -47,7 +48,7 @@ const MainForm = () => {
           if (textInputs.length <= 1) {
             errorh4.style.visibility = "visible";
           } else {
-            console.log(data);
+            postFormData(data);
             let random =
               textInputs[Math.floor(Math.random() * textInputs.length)];
 
