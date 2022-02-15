@@ -26,20 +26,6 @@ const StyledResult = styled(Result)`
     top: 0.5rem;
     cursor: pointer;
   }
-  .get-restaurants-nearby {
-    font-family: Montserrat, sans-serif;
-    text-align: center;
-    cursor: pointer;
-    margin-top: 1rem;
-    height: 2rem;
-    width: 310px;
-    padding: 13px;
-    font-size: 1.4rem;
-    border-radius: 3px;
-    background-color: #d5adc8;
-    background-image: linear-gradient(315deg, #d5adc8 0%, #ff8489 74%);
-    color: rgba(255, 254, 252);
-  }
 `;
 
 export default StyledResult;

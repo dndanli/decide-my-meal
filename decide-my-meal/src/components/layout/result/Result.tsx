@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 type ResultProp = {
   className: string;
@@ -5,7 +6,7 @@ type ResultProp = {
 };
 
 const Result = ({ className, foodChosen }: ResultProp) => {
-  const handleOnClose = () => {
+  const HandleOnClose = () => {
     let resultSection = document.querySelector(
       ".result-display"
     ) as HTMLElement;
@@ -14,16 +15,8 @@ const Result = ({ className, foodChosen }: ResultProp) => {
   return (
     <div className={className}>
       {<h2 className="choice">You'll be having ✨{foodChosen}!✨</h2>}
-      <div className="close-btn" onClick={handleOnClose}>
+      <div className="close-btn" onClick={HandleOnClose}>
         <AiOutlineCloseCircle />
-      </div>
-      <div
-        className="get-restaurants-nearby"
-        onClick={() => {
-          console.log("fetching for restaurants nearby");
-        }}
-      >
-        <h3>Find restaurants.</h3>
       </div>
     </div>
   );
