@@ -1,6 +1,7 @@
 import { useState, useRef } from "react";
 import { useForm } from "react-hook-form";
 import postFormData from "../functions/sendFormData";
+import getApiData from "../functions/getApiData";
 import StyledFoodInput from "./FoodInput.style";
 import StyledResult from "../layout/result/Result.style";
 
@@ -38,7 +39,7 @@ const MainForm = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-
+  let dataReceived: Object;
   return (
     <div className="wrapper">
       <form
@@ -56,6 +57,7 @@ const MainForm = () => {
             let comp = document.querySelector(".result-display") as HTMLElement;
             comp.style.visibility = "visible";
             errorh4.style.visibility = "hidden";
+            dataReceived = getApiData();
           }
         })}
       >
