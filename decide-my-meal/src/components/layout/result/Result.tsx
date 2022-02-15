@@ -1,5 +1,7 @@
 import { useEffect } from "react";
+import StyledList from "../list/List.style";
 import { AiOutlineCloseCircle } from "react-icons/ai";
+
 type ResultProp = {
   className: string;
   foodChosen: string;
@@ -17,6 +19,16 @@ const Result = ({ className, foodChosen }: ResultProp) => {
       {<h2 className="choice">You'll be having ✨{foodChosen}!✨</h2>}
       <div className="close-btn" onClick={HandleOnClose}>
         <AiOutlineCloseCircle />
+      </div>
+      <div className="restaurant-list">
+        <StyledList
+          className="res-list"
+          title="res1"
+          website="google.com"
+          hasWebsite={true}
+          phoneNumber="515-111-1111"
+          address="123 main Street"
+        />
       </div>
     </div>
   );
