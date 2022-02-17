@@ -21,8 +21,8 @@ app
     let foodChosen = req.body.foodChosen;
     let state = formData.state;
     let city = formData.city;
-    let queryString = `https://api.tomtom.com/search/2/search/${foodChosen}%20${city}%20${state}.json?limit=5&minFuzzyLevel=1&maxFuzzyLevel=2&view=Unified&relatedPois=off&key=${API_KEY}
-  `;
+    let queryString = `https://api.tomtom.com/search/2/search/${foodChosen}%20${city}%20${state}.json?minFuzzyLevel=1&maxFuzzyLevel=2&categorySet=7315&view=Unified&relatedPois=off&key=${API_KEY}
+      `;
 
     try {
       response = await (await axios.get(queryString)).data;
