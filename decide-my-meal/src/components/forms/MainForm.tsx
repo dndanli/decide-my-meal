@@ -4,11 +4,18 @@ import postFormData from "../functions/postFormData";
 import getApiData from "../functions/getApiData";
 import StyledFoodInput from "./FoodInput.style";
 import StyledResult from "../layout/result/Result.style";
+import {
+  valiDateInputLength,
+  pickRandomFood,
+  changeErrorStyling,
+  changeAreaOfComponentVisibility,
+} from "../functions/helperFunctions";
 
 const MainForm = () => {
   const [counter, setCounter] = useState(0);
   const [foodInputArr, updateFoodInputArr] = useState<JSX.Element[]>([]);
   const [textInputs, updateInputs] = useState<string[]>([]);
+  const [apiData, setApiData] = useState([]);
   const foodChosenRef = useRef("");
 
   const handleOnRemove = (i: number) => {
@@ -45,23 +52,26 @@ const MainForm = () => {
         className="form-content"
         onSubmit={handleSubmit((data, e) => {
           e?.preventDefault();
-          let errorh4 = document.getElementById("food-error") as HTMLElement;
-          if (textInputs.length <= 1) {
-            errorh4.style.visibility = "visible";
+
+          if (valiDateInputLength(textInputs.length) === true) {
+            changeErrorStyling(true);
           } else {
-            const random =
-              textInputs[Math.floor(Math.random() * textInputs.length)];
+            const random = pickRandomFood(textInputs);
 
-            // posting data
             postFormData(data, random);
-            console.log("the random food chosen", random);
-            foodChosenRef.current = random;
-            let comp = document.querySelector(".result-display") as HTMLElement;
-            comp.style.visibility = "visible";
-            errorh4.style.visibility = "hidden";
 
+            foodChosenRef.current = random;
+
+            changeAreaOfComponentVisibility(true);
+
+            changeErrorStyling(false);
+
+            //dispaying requested data with delay of 2 seconds
             setTimeout(() => {
-              getApiData().then((res) => console.log(res));
+              getApiData().then((res) => {
+                console.log(res.results);
+                setApiData(res.results);
+              });
             }, 2000);
           }
         })}
@@ -99,6 +109,7 @@ const MainForm = () => {
         <StyledResult
           className={"result-display"}
           foodChosen={foodChosenRef.current}
+          restaurants={apiData}
         />
         <ul className="options-entered">
           <h4 id="remove-h4">click on food to remove it.</h4>
