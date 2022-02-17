@@ -2,45 +2,20 @@ import { useState, useRef } from "react";
 import { useForm } from "react-hook-form";
 import postFormData from "../functions/postFormData";
 import getApiData from "../functions/getApiData";
-import StyledFoodInput from "./FoodInput.style";
 import StyledResult from "../layout/result/Result.style";
+import useMainForm from "../hooks/useMainForm";
 import {
-  valiDateInputLength,
+  isInputQuantityAccepted,
   pickRandomFood,
   changeErrorStyling,
   changeAreaOfComponentVisibility,
 } from "../functions/helperFunctions";
 
 const MainForm = () => {
-  const [counter, setCounter] = useState(0);
-  const [foodInputArr, updateFoodInputArr] = useState<JSX.Element[]>([]);
-  const [textInputs, updateInputs] = useState<string[]>([]);
+  let { foodInputArr, textInputs, handleOnAdd, handleOnRemove } = useMainForm();
   const [apiData, setApiData] = useState([]);
   const foodChosenRef = useRef("");
 
-  const handleOnRemove = (i: number) => {
-    updateInputs(textInputs.filter((input, index) => index !== i));
-    updateFoodInputArr(foodInputArr.filter((input, index) => index !== i));
-  };
-
-  const handleOnAdd = () => {
-    let foodIputEl = document.getElementById("food-input") as HTMLInputElement;
-    let valueToSearch = foodIputEl.value.toLowerCase();
-    if (!textInputs.includes(valueToSearch)) {
-      setCounter(counter + 1);
-
-      updateFoodInputArr((oldArr) => [
-        ...oldArr,
-        <StyledFoodInput
-          className="styled-food-input"
-          foodName={foodIputEl.value.toLowerCase()}
-        />,
-      ]);
-      updateInputs((oldTextArr) => [...oldTextArr, valueToSearch]);
-    } else {
-      alert(`${valueToSearch} has already been added`);
-    }
-  };
   const {
     register,
     handleSubmit,
@@ -53,14 +28,14 @@ const MainForm = () => {
         onSubmit={handleSubmit((data, e) => {
           e?.preventDefault();
 
-          if (valiDateInputLength(textInputs.length) === true) {
+          if (isInputQuantityAccepted(textInputs.length) === false) {
             changeErrorStyling(true);
           } else {
-            const random = pickRandomFood(textInputs);
+            const foodChosen = pickRandomFood(textInputs);
 
-            postFormData(data, random);
+            postFormData(data, foodChosen);
 
-            foodChosenRef.current = random;
+            foodChosenRef.current = foodChosen;
 
             changeAreaOfComponentVisibility(true);
 
