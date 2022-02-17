@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import { useForm } from "react-hook-form";
-import postFormData from "../functions/sendFormData";
+import postFormData from "../functions/postFormData";
 import getApiData from "../functions/getApiData";
 import StyledFoodInput from "./FoodInput.style";
 import StyledResult from "../layout/result/Result.style";
@@ -39,25 +39,31 @@ const MainForm = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  let dataReceived: Object;
   return (
     <div className="wrapper">
       <form
         className="form-content"
-        onSubmit={handleSubmit((data) => {
+        onSubmit={handleSubmit((data, e) => {
+          e?.preventDefault();
           let errorh4 = document.getElementById("food-error") as HTMLElement;
           if (textInputs.length <= 1) {
             errorh4.style.visibility = "visible";
           } else {
-            postFormData(data);
-            let random =
+            const random =
               textInputs[Math.floor(Math.random() * textInputs.length)];
 
+            // posting data
+            postFormData(data, random);
+            console.log('the random food chosen',random)
             foodChosenRef.current = random;
             let comp = document.querySelector(".result-display") as HTMLElement;
             comp.style.visibility = "visible";
-            errorh4.style.visibility = "hidden";
-            dataReceived = getApiData();
+            errorh4.style.visibility = "hidden"; 
+          
+            setTimeout(()=>{
+
+              getApiData().then(res => console.log(res));
+            },2000);  
           }
         })}
       >
