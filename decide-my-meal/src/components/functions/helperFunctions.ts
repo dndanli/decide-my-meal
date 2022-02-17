@@ -1,7 +1,7 @@
-export const valiDateInputLength = (length: number): boolean => {
+export const isInputQuantityAccepted = (length: number): boolean => {
   const minLen = 1;
-  if (length <= minLen) return true;
-  return false;
+  if (length <= minLen) return false;
+  return true;
 };
 
 export const changeErrorStyling = (isVisible: boolean): void => {
