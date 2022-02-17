@@ -1,12 +1,13 @@
-import StyledList from "../list/List.style";
 import { AiOutlineCloseCircle } from "react-icons/ai";
+import StyledList from "../list/List.style";
 
 type ResultProp = {
   className: string;
   foodChosen: string;
+  restaurants: any;
 };
 
-const Result = ({ className, foodChosen }: ResultProp) => {
+const Result = ({ className, foodChosen, restaurants }: ResultProp) => {
   const HandleOnClose = () => {
     let resultSection = document.querySelector(
       ".result-display"
@@ -20,14 +21,18 @@ const Result = ({ className, foodChosen }: ResultProp) => {
         <AiOutlineCloseCircle />
       </div>
       <div className="restaurant-list">
-        <StyledList
-          className="res-list"
-          title="res1"
-          website="google.com"
-          hasWebsite={true}
-          phoneNumber="515-111-1111"
-          address="123 main Street"
-        />
+        {restaurants.map((el: any) => {
+          return (
+            <div key={el.id}>
+              <StyledList
+                className="res-list"
+                title={el.poi.name}
+                phoneNumber={el.poi.phone}
+                address={el.address.freeformAddress}
+              />
+            </div>
+          );
+        })}
       </div>
     </div>
   );
