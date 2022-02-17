@@ -54,16 +54,15 @@ const MainForm = () => {
 
             // posting data
             postFormData(data, random);
-            console.log('the random food chosen',random)
+            console.log("the random food chosen", random);
             foodChosenRef.current = random;
             let comp = document.querySelector(".result-display") as HTMLElement;
             comp.style.visibility = "visible";
-            errorh4.style.visibility = "hidden"; 
-          
-            setTimeout(()=>{
+            errorh4.style.visibility = "hidden";
 
-              getApiData().then(res => console.log(res));
-            },2000);  
+            setTimeout(() => {
+              getApiData().then((res) => console.log(res));
+            }, 2000);
           }
         })}
       >

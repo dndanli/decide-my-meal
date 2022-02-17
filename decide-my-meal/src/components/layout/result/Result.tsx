@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import StyledList from "../list/List.style";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 
