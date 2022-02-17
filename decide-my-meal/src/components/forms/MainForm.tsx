@@ -1,14 +1,13 @@
 import { useState, useRef } from "react";
 import { useForm } from "react-hook-form";
-import postFormData from "../functions/postFormData";
 import getApiData from "../functions/getApiData";
 import StyledResult from "../layout/result/Result.style";
 import useMainForm from "../hooks/useMainForm";
 import {
   isInputQuantityAccepted,
-  pickRandomFood,
+  handleStyling,
   changeErrorStyling,
-  changeAreaOfComponentVisibility,
+  handleFoodChosen,
 } from "../functions/helperFunctions";
 
 const MainForm = () => {
@@ -31,15 +30,8 @@ const MainForm = () => {
           if (isInputQuantityAccepted(textInputs.length) === false) {
             changeErrorStyling(true);
           } else {
-            const foodChosen = pickRandomFood(textInputs);
-
-            postFormData(data, foodChosen);
-
-            foodChosenRef.current = foodChosen;
-
-            changeAreaOfComponentVisibility(true);
-
-            changeErrorStyling(false);
+            foodChosenRef.current = handleFoodChosen(data, textInputs);
+            handleStyling(false, true);
 
             //dispaying requested data with delay of 2 seconds
             setTimeout(() => {
