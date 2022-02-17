@@ -1,6 +1,6 @@
 import express, { Application, Request, Response, urlencoded } from "express";
-import { documenuData } from "./data";
-const cors = require("cors");
+import axios from "axios";
+import cors from "cors";
 require("dotenv").config();
 
 const API_KEY = process.env.API_KEY;
@@ -11,29 +11,34 @@ app.use(express.json());
 app.use(cors());
 const PORT = 5000;
 
-let data: Object;
-app.post("/post_data", async (req: Request, res: Response) => {
+let response: Object;
+
+app.route('/data').
+  post(async (req: Request, res: Response) => {
+  console.log("getting the data from post");
   let { formData } = req.body;
-  console.log("the form data: ", formData);
+  let foodChosen = req.body.foodChosen;
+  let state = formData.state;
+  let city = formData.city;
 
-  //call the api with the form data received
-  // emulate timeout
-  console.log("making api call");
-  setTimeout(() => {
-    console.log("data received");
-    data = documenuData;
-  }, 2000);
+   console.log(
+     `city:${formData.city}, state:${formData.state}, food:${foodChosen}`
+   );
+
+  let queryString = `https://api.tomtom.com/search/2/search/${foodChosen}%20${city}%20${state}.json?limit=5&minFuzzyLevel=1&maxFuzzyLevel=2&view=Unified&relatedPois=off&key=${API_KEY}
+  `;
+
+  try {
+    response = await (await axios.get(queryString)).data;
+    res.send(response);
+  } catch (error) {
+    console.error(error);
+  }
+}).get( (req: Request, res: Response) => {
+  console.log(response);
+  console.log("sendind the data"); 
+  res.send(response);
 });
-
-/**
- * listen to get request of front end
- * give the data to front end
- */
-
-app.get("/get_data", async (req: Request, res: Response) => {
-  res.json(data);
-});
-
 app.listen(PORT, () =>
   console.log(`Server running at http://localhost:${PORT}`)
 );
