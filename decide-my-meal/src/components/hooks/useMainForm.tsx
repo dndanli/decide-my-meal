@@ -10,22 +10,30 @@ const useMainForm = () => {
     updateInputs(textInputs.filter((_, index) => index !== i));
     updateFoodInputArr(foodInputArr.filter((_, index) => index !== i));
   };
+
   const handleOnAdd = () => {
+    const validateInput = (input: string) => {
+      return !!input.trim();
+    };
+
     let foodIputEl = document.getElementById("food-input") as HTMLInputElement;
     let valueToSearch = foodIputEl.value.toLowerCase();
-    if (!textInputs.includes(valueToSearch)) {
-      setCounter(counter + 1);
 
-      updateFoodInputArr((oldArr) => [
-        ...oldArr,
-        <StyledFoodInput
-          className="styled-food-input"
-          foodName={foodIputEl.value.toLowerCase()}
-        />,
-      ]);
-      updateInputs((oldTextArr) => [...oldTextArr, valueToSearch]);
-    } else {
-      alert(`${valueToSearch} has already been added`);
+    if (validateInput(foodIputEl.value) === true) {
+      if (!textInputs.includes(valueToSearch)) {
+        setCounter(counter + 1);
+
+        updateFoodInputArr((oldArr) => [
+          ...oldArr,
+          <StyledFoodInput
+            className="styled-food-input"
+            foodName={foodIputEl.value.toLowerCase()}
+          />,
+        ]);
+        updateInputs((oldTextArr) => [...oldTextArr, valueToSearch]);
+      } else {
+        alert(`${valueToSearch} has already been added`);
+      }
     }
   };
   return { foodInputArr, textInputs, handleOnAdd, handleOnRemove };
