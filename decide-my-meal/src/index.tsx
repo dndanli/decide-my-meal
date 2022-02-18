@@ -9,7 +9,6 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
   } 
-  
   @font-face {
   font-family: 'Montserrat';
   src: url('Montserrat.eot');
@@ -17,7 +16,7 @@ const GlobalStyle = createGlobalStyle`
     url('Montserrat.woff2') format('woff2'), 
     url('Montserrat.woff') format('woff'), 
   }
- 
+  
   .wrapper{
     display: flex;
     font-family: Montserrat, sans-serif;
@@ -37,8 +36,8 @@ const GlobalStyle = createGlobalStyle`
   }
   .result-content{
     flex: 1;
-    color:rgb(255, 254, 252);
-    background-color: #2C363F;
+    background-color:rgb(255, 254, 252);
+    color: #212121;
     border-left: 1px solid #d4d2d2;
     display: flex;
     flex-direction: column;
@@ -58,11 +57,13 @@ const GlobalStyle = createGlobalStyle`
   }
 
   #form-text-h1{
+    font-size: 3rem;
     margin-top: 10rem;
   }
 
   #form-text-h4{
-    color: #E75A7C;
+    font-size: 1.5rem;
+    color: #ff9761;
   }
  
   input, select{
@@ -107,8 +108,11 @@ const GlobalStyle = createGlobalStyle`
     padding: 13px;
     font-size: 1.4rem;
     border-radius: 3px;
-    background-color: #d5adc8;
-    background-image: linear-gradient(315deg, #d5adc8 0%, #ff8489 74%);
+    background-color #ffac81;
+    background-image linear-gradient(315deg, #ffac81 0%, #ff928b 74%);
+
+   // background-color: #d5adc8;
+    //background-image: linear-gradient(315deg, #d5adc8 0%, #ff8489 74%);
     color: rgba(255, 254, 252);
   }
 
@@ -121,16 +125,18 @@ const GlobalStyle = createGlobalStyle`
     width: 50px;
     padding: 13px;
     font-size: 1.2rem;
-    border-radius: 3px;
-    border: 1px solid #E75A7C;
+    border-radius: 3px; 
+    border: 1px solid #ff9761;
     color: #E75A7C;
     margin-left: 10px;
     background-color: rgba(255, 254, 252);
   }
 
   input[type='button']:hover{
+    border:1px solid rgb(255, 254, 252);
     cursor: pointer;
-    background-color: pink;
+    background-color #ffac81;
+    background-image linear-gradient(315deg, #ffac81 0%, #ff928b 74%);
     transition: ease-in-out 0.5s;
     color: #ffff;
   }

@@ -11,7 +11,7 @@ const StyledResult = styled(Result)`
   justify-content: flex-start;
   align-items: center;
   color: rgb(255, 254, 252);
-  background-color: rgba(255, 254, 252, 0.2);
+  background-color: #252422;
   background: linear-gradient(rgba(255, 255, 255, 0.5));
   backdrop-filter: blur(7px);
   min-height: 90vh;
@@ -28,7 +28,7 @@ const StyledResult = styled(Result)`
   }
   .restaurant-list {
     /* background-color: aliceblue; */
-    overflow: scroll;
+    overflow: auto;
     height: 70vh;
     margin-top: 2rem;
   }

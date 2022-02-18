@@ -8,9 +8,9 @@ type ListProps = {
 const List = ({ className, title, phoneNumber, address }: ListProps) => {
   return (
     <div className={className}>
-      <h2>{title}</h2>
-      <h4>{phoneNumber}</h4>
-      <h4>{address}</h4>
+      <h2 className="title">{title}</h2>
+      <h4 className="phone-number">{phoneNumber}</h4>
+      <h4 className="address">{address}</h4>
     </div>
   );
 };

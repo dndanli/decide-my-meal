@@ -7,7 +7,7 @@ const StyledFoodInput = styled(FoodInput)`
   border-radius: 7px;
   padding: 1rem;
   margin-bottom: 1rem;
-  color: rgb(255, 254, 252);
+  color: #252422;
   width: 200px;
   border: 1px solid #d4d2d2;
   .remove-mark {
@@ -16,8 +16,9 @@ const StyledFoodInput = styled(FoodInput)`
     display: none;
   }
   &:hover {
-    background-color: #f7c9d4;
+    background-color: #ffac81;
     transition: ease-in-out 0.8s;
+    border: 1px solid #0000;
     color: #ffff;
     cursor: pointer;
     .food-name {
