@@ -14,6 +14,7 @@ const MainForm = () => {
   let { foodInputArr, textInputs, handleOnAdd, handleOnRemove } = useMainForm();
   const [apiData, setApiData] = useState([]);
   const foodChosenRef = useRef("");
+  const [loading, setLoading] = useState(false);
 
   const {
     register,
@@ -33,9 +34,11 @@ const MainForm = () => {
             foodChosenRef.current = handleFoodChosen(data, textInputs);
             handleStyling(false, true);
 
+            setLoading(true);
             //dispaying requested data with delay of 2 seconds
             setTimeout(() => {
               getApiData().then((res) => {
+                setLoading(false);
                 console.log(res.results);
                 setApiData(res.results);
               });
@@ -77,6 +80,7 @@ const MainForm = () => {
           className={"result-display"}
           foodChosen={foodChosenRef.current}
           restaurants={apiData}
+          loadingStatus={loading}
         />
         <ul className="options-entered">
           <h4 id="remove-h4">click on food to remove it.</h4>
