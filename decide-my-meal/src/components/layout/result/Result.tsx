@@ -1,11 +1,6 @@
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import StyledList from "../list/List.style";
-import { BarLoader, PulseLoader } from "react-spinners";
-
-const override: Object = {
-  display: "block",
-  backgroundColor: "red",
-};
+import { BarLoader } from "react-spinners";
 
 type ResultProp = {
   className: string;
