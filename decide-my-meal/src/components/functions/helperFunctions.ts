@@ -1,5 +1,4 @@
 import postFormData from "./postFormData";
-import getApiData from "./getApiData";
 
 export const isInputQuantityAccepted = (length: number): boolean => {
   const minLen = 1;
