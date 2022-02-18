@@ -29,6 +29,7 @@ const Result = ({ className, foodChosen, restaurants }: ResultProp) => {
                 title={el.poi.name}
                 phoneNumber={el.poi.phone}
                 address={el.address.freeformAddress}
+                website={el.poi.url}
               />
             </div>
           );
