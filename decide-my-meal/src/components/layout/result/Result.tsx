@@ -1,13 +1,25 @@
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import StyledList from "../list/List.style";
+import { BarLoader, PulseLoader } from "react-spinners";
+
+const override: Object = {
+  display: "block",
+  backgroundColor: "red",
+};
 
 type ResultProp = {
   className: string;
   foodChosen: string;
   restaurants: any;
+  loadingStatus: boolean;
 };
 
-const Result = ({ className, foodChosen, restaurants }: ResultProp) => {
+const Result = ({
+  className,
+  foodChosen,
+  restaurants,
+  loadingStatus,
+}: ResultProp) => {
   const HandleOnClose = () => {
     let resultSection = document.querySelector(
       ".result-display"
@@ -21,19 +33,38 @@ const Result = ({ className, foodChosen, restaurants }: ResultProp) => {
         <AiOutlineCloseCircle />
       </div>
       <div className="restaurant-list">
-        {restaurants.map((el: any) => {
-          return (
-            <div key={el.id}>
-              <StyledList
-                className="res-list"
-                title={el.poi.name}
-                phoneNumber={el.poi.phone}
-                address={el.address.freeformAddress}
-                website={el.poi.url}
-              />
-            </div>
-          );
-        })}
+        {loadingStatus ? (
+          <div
+            className="loader"
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              marginTop: "15rem",
+              alignItems: "center",
+            }}
+          >
+            <BarLoader
+              color="#ff9761"
+              css="background-color:white"
+              height={7}
+              width={190}
+            />
+          </div>
+        ) : (
+          restaurants.map((el: any) => {
+            return (
+              <div key={el.id}>
+                <StyledList
+                  className="res-list"
+                  title={el.poi.name}
+                  phoneNumber={el.poi.phone}
+                  address={el.address.freeformAddress}
+                  website={el.poi.url}
+                />
+              </div>
+            );
+          })
+        )}
       </div>
     </div>
   );

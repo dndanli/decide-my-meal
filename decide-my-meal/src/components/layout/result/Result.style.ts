@@ -12,7 +12,6 @@ const StyledResult = styled(Result)`
   align-items: center;
   color: rgb(255, 254, 252);
   background-color: #252422;
-  background: linear-gradient(rgba(255, 255, 255, 0.5));
   backdrop-filter: blur(7px);
   min-height: 90vh;
   width: 45vw;

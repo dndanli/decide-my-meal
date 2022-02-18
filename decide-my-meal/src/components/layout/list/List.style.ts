@@ -5,7 +5,7 @@ const StyledList = styled(List)`
   margin-top: 1rem;
   background-color: rgba(255, 254, 252, 0.2);
   backdrop-filter: blur(7px);
-  color: rgb(255, 254, 252);
+  color: rgba(255, 254, 252, 0.9);
   width: 520px;
   height: 145px;
   padding: 0.5rem;
@@ -30,8 +30,7 @@ const StyledList = styled(List)`
     font-size: 1.2rem;
   }
   .website-link {
-    text-decoration: none;
-    color: #ff9761;
+    color: white;
   }
 `;
 
