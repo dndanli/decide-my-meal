@@ -57,12 +57,12 @@ const GlobalStyle = createGlobalStyle`
   }
 
   #form-text-h1{
-    font-size: 3rem;
+    font-size: 4rem;
     margin-top: 10rem;
   }
 
   #form-text-h4{
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     color: #ff9761;
   }
  
@@ -84,7 +84,7 @@ const GlobalStyle = createGlobalStyle`
   input[type='text']{
     margin-top: 1rem;
     height: 1.2rem;
-    width: 280px;
+    width:320px;
     padding: 13px;
     font-size: 1.2rem;
     border-radius: 3px;
@@ -93,7 +93,7 @@ const GlobalStyle = createGlobalStyle`
   #food-input{
     margin-top: 1rem;
     height: 1.2rem;
-    width: 217px;
+    width: 260px;
     padding: 13px;
     font-size: 1.2rem;
     border-radius: 3px;
@@ -104,15 +104,12 @@ const GlobalStyle = createGlobalStyle`
     cursor: pointer;
     margin-top: 1rem;
     height: 3rem;
-    width: 310px;
+    width: 345px;
     padding: 13px;
     font-size: 1.4rem;
     border-radius: 3px;
     background-color #ffac81;
     background-image linear-gradient(315deg, #ffac81 0%, #ff928b 74%);
-
-   // background-color: #d5adc8;
-    //background-image: linear-gradient(315deg, #d5adc8 0%, #ff8489 74%);
     color: rgba(255, 254, 252);
   }
 
