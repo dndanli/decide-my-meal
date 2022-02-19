@@ -10,9 +10,8 @@ const StyledResult = styled(Result)`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  color: rgb(255, 254, 252);
-  background-color: #252422;
-  backdrop-filter: blur(7px);
+  color: #f66d9f;
+  background-color: #d3dbeb;
   min-height: 90vh;
   width: 45vw;
   .choice {
@@ -26,7 +25,6 @@ const StyledResult = styled(Result)`
     cursor: pointer;
   }
   .restaurant-list {
-    /* background-color: aliceblue; */
     overflow: auto;
     height: 70vh;
     margin-top: 2rem;

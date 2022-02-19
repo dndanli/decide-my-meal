@@ -39,7 +39,7 @@ const Result = ({
             }}
           >
             <BarLoader
-              color="#ff9761"
+              color="#6e72fc"
               css="background-color:white"
               height={7}
               width={190}

@@ -5,20 +5,22 @@ const StyledFoodInput = styled(FoodInput)`
   text-align: center;
   align-items: center;
   border-radius: 7px;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  color: #252422;
-  width: 200px;
-  border: 1px solid #d4d2d2;
+  padding: 1.7rem;
+  margin-bottom: 2rem;
+  color: #1a206d;
+  width: 230px;
+  height: 30px;
+  font-size: 1.3rem;
+  border: 1px solid #1a206d;
   .remove-mark {
     font-size: 1.2rem;
     color: #ffff;
     display: none;
   }
   &:hover {
-    background-color: #ffac81;
+    background-color: #6e72fc;
     transition: ease-in-out 0.8s;
-    border: 1px solid #0000;
+    border: 1px solid #f4f4f8;
     color: #ffff;
     cursor: pointer;
     .food-name {

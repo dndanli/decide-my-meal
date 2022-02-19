@@ -83,7 +83,6 @@ const MainForm = () => {
           loadingStatus={loading}
         />
         <ul className="options-entered">
-          <h4 id="remove-h4">click on food to remove it.</h4>
           {foodInputArr.map((input, index) => {
             return (
               <li onClick={() => handleOnRemove(index)} key={index}>

@@ -27,8 +27,11 @@ const GlobalStyle = createGlobalStyle`
   }
   .form-content{
     flex: 1;
-    color: #252422;
-    background-color: rgb(255, 254, 252);
+    color: white;
+  
+    background-color: #1a206d;
+    background-image: linear-gradient(326deg, #1a206d 0%, #333888 74%);
+
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -36,20 +39,21 @@ const GlobalStyle = createGlobalStyle`
   }
   .result-content{
     flex: 1;
-    background-color:rgb(255, 254, 252);
-    color: #212121;
+    background-color:#e4e9f3;
+    color: #a4508b;
     border-left: 1px solid #d4d2d2;
     display: flex;
     flex-direction: column;
     justify-content:flex-start;
     align-items: center;
+    overflow: auto;
   }
   .options-entered{
     margin-top: 12rem;
     list-style-type: none;
   }
-  #remove-h4{
-    color: rgb(255, 254, 252);
+  #remove-h2{
+    color: #a4508b;
   }
   .options-entered h4{
     text-align: center;
@@ -63,7 +67,7 @@ const GlobalStyle = createGlobalStyle`
 
   #form-text-h4{
     font-size: 1.6rem;
-    color: #ff9761;
+    color: #f66d9f;
   }
  
   input, select{
@@ -103,14 +107,14 @@ const GlobalStyle = createGlobalStyle`
   input[type='submit']{
     cursor: pointer;
     margin-top: 1rem;
-    height: 3rem;
+    height: 3.5rem;
     width: 345px;
     padding: 13px;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     border-radius: 3px;
-    background-color #ffac81;
-    background-image linear-gradient(315deg, #ffac81 0%, #ff928b 74%);
-    color: rgba(255, 254, 252);
+  background-color: #6e72fc;
+  background-image: linear-gradient(315deg, #6e72fc 0%, #ad1deb 74%);
+    color:rgb(255,254,252);
   }
 
   .food-input-wrapper{
@@ -123,8 +127,8 @@ const GlobalStyle = createGlobalStyle`
     padding: 13px;
     font-size: 1.2rem;
     border-radius: 3px; 
-    border: 1px solid #ff9761;
-    color: #E75A7C;
+    border: 1px solid gray;
+    color: #6e72fc;
     margin-left: 10px;
     background-color: rgba(255, 254, 252);
   }
@@ -132,8 +136,8 @@ const GlobalStyle = createGlobalStyle`
   input[type='button']:hover{
     border:1px solid rgb(255, 254, 252);
     cursor: pointer;
-    background-color #ffac81;
-    background-image linear-gradient(315deg, #ffac81 0%, #ff928b 74%);
+    background-color: #6e72fc;
+    background-image: linear-gradient(315deg, #6e72fc 0%, #ad1deb 74%);
     transition: ease-in-out 0.5s;
     color: #ffff;
   }

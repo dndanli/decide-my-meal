@@ -3,9 +3,8 @@ import List from "./List";
 
 const StyledList = styled(List)`
   margin-top: 1rem;
-  background-color: rgba(255, 254, 252, 0.2);
-  backdrop-filter: blur(7px);
-  color: rgba(255, 254, 252, 0.9);
+  background: #f9fafc;
+  color: #3d3d3d;
   width: 520px;
   height: 145px;
   padding: 0.5rem;
@@ -30,7 +29,12 @@ const StyledList = styled(List)`
     font-size: 1.2rem;
   }
   .website-link {
-    color: white;
+    color: #2f2f2f;
+  }
+
+  &:hover {
+    transition: all ease-in-out 1s;
+    background-color: rgba(255, 254, 252, 0.7);
   }
 `;
 
