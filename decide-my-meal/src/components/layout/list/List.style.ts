@@ -36,6 +36,36 @@ const StyledList = styled(List)`
     transition: all ease-in-out 1s;
     background-color: rgba(255, 254, 252, 0.7);
   }
+
+  @media screen and (max-width: 1000px) {
+    width: 400px;
+    padding: 1rem;
+    .phone-number,
+    .address,
+    .website {
+      font-size: 15px;
+    }
+    .title {
+      font-size: 1.3rem;
+    }
+  }
+
+  @media screen and (max-width: 775px) {
+    width: 330px;
+  }
+
+  @media screen and (max-width: 700px) {
+    width: 300px;
+  }
+
+  @media screen and (max-width: 480px) {
+    width: 250px;
+    height: 130px;
+    overflow-x: scroll;
+    .title {
+      font-size: 1rem;
+    }
+  }
 `;
 
 export default StyledList;

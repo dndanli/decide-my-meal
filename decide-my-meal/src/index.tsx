@@ -27,11 +27,9 @@ const GlobalStyle = createGlobalStyle`
   }
   .form-content{
     flex: 1;
-    color: white;
-  
+    color: white; 
     background-color: #1a206d;
     background-image: linear-gradient(326deg, #1a206d 0%, #333888 74%);
-
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -149,6 +147,50 @@ const GlobalStyle = createGlobalStyle`
   #food-error{
     visibility: hidden;
   }
+
+  @media screen and (max-width: 1200px){
+    .wrapper{
+      flex-direction:column;
+    } 
+
+    .form-content{
+      min-height: 80vh;
+    }
+
+    #form-text-h1{
+      font-size:3rem;
+    }
+
+    #form-text-h4{
+      font-size:1.3rem;
+    }
+
+    input[type='text']{
+      width:270px;
+    }
+
+    input[type='submit']{
+      width:290px;
+    }
+
+    #food-input{
+      width:205px;
+    }
+  }
+  
+  @media screen and (max-height: 750px){
+    
+    input[type='submit']{
+      width:290px;
+      margin-bottom:1.5rem;
+    }
+
+    #food-input{
+      width:205px;
+    }
+  
+  }
+    
 `;
 
 ReactDOM.render(

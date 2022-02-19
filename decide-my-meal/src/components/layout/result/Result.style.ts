@@ -29,6 +29,17 @@ const StyledResult = styled(Result)`
     height: 70vh;
     margin-top: 2rem;
   }
+
+  @media screen and (max-width: 1200px) {
+    width: 80vw;
+  }
+
+  @media screen and (max-width: 480px) {
+    width: 90vw;
+    .choice {
+      font-family: 1rem;
+    }
+  }
 `;
 
 export default StyledResult;

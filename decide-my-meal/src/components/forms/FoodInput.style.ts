@@ -30,6 +30,11 @@ const StyledFoodInput = styled(FoodInput)`
       display: block;
     }
   }
+
+  @media screen and (max-width: 400px) {
+    width: 210px;
+    height: 27px;
+  }
 `;
 
 export default StyledFoodInput;
