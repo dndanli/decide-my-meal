@@ -176,6 +176,7 @@ const GlobalStyle = createGlobalStyle`
     #food-input{
       width:205px;
     }
+    
   }
   
   @media screen and (max-height: 750px){
@@ -185,9 +186,6 @@ const GlobalStyle = createGlobalStyle`
       margin-bottom:1.5rem;
     }
 
-    #food-input{
-      width:205px;
-    }
   
   }
     
