@@ -1,4 +1,5 @@
 import express, { Application, Request, Response } from "express";
+import path from "path";
 import axios from "axios";
 import cors from "cors";
 require("dotenv").config();
@@ -7,12 +8,12 @@ require("dotenv").config();
 const API_KEY = process.env.API_KEY;
 
 const app: Application = express();
-const PORT = process.env.PORT || 5000;
-
 app.use(express.json());
 app.use(cors());
 
-let response: Object;
+const PORT = process.env.PORT || 8080;
+
+const buildPath = path.join(__dirname, "../decide-my-meal", "build");
 
 app
   .route("/data")
@@ -34,6 +35,16 @@ app
   .get((req: Request, res: Response) => {
     res.send(response);
   });
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(buildPath));
+  app.get("*", (req: Request, res: Response) => {
+    res.sendFile(path.join(buildPath, "index.html"));
+  });
+}
+
+let response: Object;
+
 app.listen(PORT, () =>
   console.log(`Server running at http://localhost:${PORT}`)
 );

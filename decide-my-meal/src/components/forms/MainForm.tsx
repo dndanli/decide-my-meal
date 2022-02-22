@@ -39,7 +39,6 @@ const MainForm = () => {
             setTimeout(() => {
               getApiData().then((res) => {
                 setLoading(false);
-                console.log(res.results);
                 setApiData(res.results);
               });
             }, 2000);
