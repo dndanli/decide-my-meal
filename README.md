@@ -1,4 +1,4 @@
-## ✨A website to help people decide what to and where to eat✨
+## ✨A website to help people decide what to eat and where to eat✨
 
 ### Technologies used: ReactJs, Typescript, NodeJs, Heroku.
 
